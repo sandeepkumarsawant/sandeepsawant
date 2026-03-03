@@ -1,0 +1,26 @@
+{
+  "users": [
+    {
+      "id": 1772533954862,
+      "fullName": "sandeep",
+      "email": "sandeep1@gmail.com",
+      "password": "sandeep",
+      "createdDate": "2026-03-03T10:32:34.862Z",
+      "updatedDate": "2026-03-03T10:32:34.863Z",
+      "phoneNumber": "1111111111",
+      "interest": "programming",
+      "agreeTerms": true
+    },
+    {
+      "id": 1772534536565,
+      "fullName": "sandeep",
+      "email": "sandeep12@gmail.com",
+      "password": "444444",
+      "createdDate": "2026-03-03T10:42:16.565Z",
+      "updatedDate": "2026-03-03T10:42:16.565Z",
+      "phoneNumber": "1111111111",
+      "interest": "ui-ux",
+      "agreeTerms": true
+    }
+  ]
+}

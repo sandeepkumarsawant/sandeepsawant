@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+
+<body>
+
+
+    <header class="site-header">
+        <div class="container">
+            <nav class="nav-wrap">
+                <a href="#" class="logo">Sam<span>Coder</span></a>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav class="main-nav" id="mainNav">
+                    <a href="#home" class="nav-link active">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#gallery" class="nav-link">Gallery</a>
+                    <a href="#achievements" class="nav-link">Achievements</a>
+                    <a href="#portfolio" class="nav-link">Portfolio</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                    <a href="user-login.html" class="nav-link" style="color: var(--secondary);">Login</a>
+                    <a href="admin.html" class="nav-link" style="color: var(--accent);">Admin</a>
+                </nav>
+            </nav>
+        </div>
+    </header>
+
+
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-wrapper">
+                <div class="hero-content" data-aos="fade-up">
+                    <h1>Hi, I'm <span class="highlight">Sandeep</span> <span class="highlight-accent">Sawant</span></h1>
+                    <p class="lead">Full Stack Developer | C Programmer | Web Designer</p>
+                    <div class="cta-group">
+                        <a href="#portfolio" class="btn primary">View My Work</a>
+                        <a href="#contact" class="btn outline">Contact Me</a>
+                    </div>
+                </div>
+                <div class="hero-image" data-aos="fade-left" data-aos-delay="200">
+                    <div class="image-wrapper">
+                        <img src="assests/images/profile/mypic.jpg" alt="Sandeep Sawant">
+                        <div class="image-glow"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">About Me</h2>
+            <div class="about-content" data-aos="fade-up" data-aos-delay="100">
+                <div class="about-text">
+                    <h3>Hello! I'm Sandeep Sawant</h3>
+                    <p>I'm a passionate developer with expertise in C programming, web development, and UI/UX design. I love creating efficient solutions and beautiful user interfaces.</p>
+                    <p>My journey in programming started with C, where I built various applications including calculators, student management systems, and more. I've expanded my skills to include modern web technologies, creating responsive and interactive websites.</p>
+                    
+                    <div class="skills">
+                        <h4>Technical Skills</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">C Programming</span>
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Vue.js</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">UI/UX Design</span>
+                            <span class="skill-tag">Figma</span>
+                            <span class="skill-tag">Git</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-info">
+                        <h4>Connect With Me</h4>
+                        <p><strong>Location:</strong> India</p>
+                        <p><strong>Email:</strong> sandeepkumarsawants@gmail.com</p>
+                        <p><strong>Available for:</strong> Freelance Projects & Collaborations</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">My Journey</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Capturing moments of my professional life</p>
+            
+            <div class="gallery-grid">
+                <!-- Journey pictures will be loaded dynamically from admin panel -->
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="achievements" class="achievements-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">My Achievements</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Milestones and recognitions in my journey</p>
+            
+            <div class="achievements-grid">
+                <!-- Achievements will be loaded dynamically from admin panel -->
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">My Projects</h2>
+            <div class="portfolio-grid">
+
+                <!-- Portfolio Item 1 -->
+                <div class="portfolio-item" data-aos="fade-up">
+                    <div class="portfolio-card">
+                        <img src="./assests/projects/sam-project-logo.png" alt="Student Management System">
+                        <div class="card-overlay">
+                            <h3>Student Management System</h3>
+                            <p>C Programming, File Handling</p>
+                            <div class="card-buttons">
+                                <a href="#" class="btn card-btn">View Details</a>
+                                <a href="https://github.com/sandeepsawant/student-management" class="btn card-btn" target="_blank">View Source</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 2 -->
+                <div class="portfolio-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="portfolio-card">
+                        <img src="./assests/projects/sam-project-logo.png" alt="Advanced Calculator">
+                        <div class="card-overlay">
+                            <h3>Advanced Calculator</h3>
+                            <p>C Programming, Mathematical Operations</p>
+                            <div class="card-buttons">
+                                <a href="#" class="btn card-btn">View Details</a>
+                                <a href="https://github.com/sandeepsawant/calculator" class="btn card-btn" target="_blank">View Source</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 3 -->
+                <div class="portfolio-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="portfolio-card">
+                        <img src="./assests/projects/sam-project-logo.png" alt="Instagram Clone">
+                        <div class="card-overlay">
+                            <h3>Instagram Clone</h3>
+                            <p>HTML, CSS, JavaScript</p>
+                            <div class="card-buttons">
+                                <a href="./assests/portfolio/portfolio1/index.html" class="btn card-btn">View Project</a>
+                                <a href="https://github.com/sandeepsawant/instagram-clone" class="btn card-btn" target="_blank">View Source</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 4 -->
+                <div class="portfolio-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="portfolio-card">
+                        <img src="./assests/projects/sam-project-logo.png" alt="E-Commerce Website">
+                        <div class="card-overlay">
+                            <h3>E-Commerce Website</h3>
+                            <p>HTML, CSS, JavaScript, Responsive Design</p>
+                            <div class="card-buttons">
+                                <a href="./assests/portfolio/portfolio2/index.html" class="btn card-btn">View Project</a>
+                                <a href="https://github.com/sandeepsawant/ecommerce" class="btn card-btn" target="_blank">View Source</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 5 -->
+                <div class="portfolio-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="portfolio-card">
+                        <img src="assests/images/sam-project-logo.png" alt="Admin Dashboard">
+                        <div class="card-overlay">
+                            <h3>Admin Dashboard</h3>
+                            <p>React, Tailwind CSS, Chart.js</p>
+                            <div class="card-buttons">
+                                <a href="./assests/portfolio/portfolio3/index.html" class="btn card-btn">View Project</a>
+                                <a href="https://github.com/sandeepsawant/admin-dashboard" class="btn card-btn" target="_blank">View Source</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 6 -->
+                <div class="portfolio-item" data-aos="fade-up" data-aos-delay="500">
+                    <div class="portfolio-card">
+                        <img src="./assests/projects/sam-project-logo.png" alt="Weather App">
+                        <div class="card-overlay">
+                            <h3>Weather Forecast App</h3>
+                            <p>JavaScript, API Integration, CSS</p>
+                            <div class="card-buttons">
+                                <a href="./assests/portfolio/portfolio4/index.html" class="btn card-btn">View Project</a>
+                                <a href="https://github.com/sandeepsawant/weather-app" class="btn card-btn" target="_blank">View Source</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 7 -->
+                <div class="portfolio-item" data-aos="fade-up" data-aos-delay="600">
+                    <div class="portfolio-card">
+                        <img src="./assests/projects/sam-project-logo.png" alt="Task Manager">
+                        <div class="card-overlay">
+                            <h3>Task Manager App</h3>
+                            <p>Vue.js, LocalStorage, Vuex</p>
+                            <div class="card-buttons">
+                                <a href="#" class="btn card-btn">View Project</a>
+                                <a href="https://github.com/sandeepsawant/task-manager" class="btn card-btn" target="_blank">View Source</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 8 -->
+                <div class="portfolio-item" data-aos="fade-up" data-aos-delay="700">
+                    <div class="portfolio-card">
+                        <img src="./assests/projects/sam-project-logo.png" alt="Blog Platform">
+                        <div class="card-overlay">
+                            <h3>Blog Platform</h3>
+                            <p>Node.js, Express, MongoDB</p>
+                            <div class="card-buttons">
+                                <a href="#" class="btn card-btn">View Project</a>
+                                <a href="https://github.com/sandeepsawant/blog-platform" class="btn card-btn" target="_blank">View Source</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 9 -->
+                <div class="portfolio-item" data-aos="fade-up" data-aos-delay="800">
+                    <div class="portfolio-card">
+                        <img src="./assests/projects/sam-project-logo.png" alt="Portfolio Website">
+                        <div class="card-overlay">
+                            <h3>Creative Portfolio</h3>
+                            <p>HTML5, CSS3, JavaScript, AOS</p>
+                            <div class="card-buttons">
+                                <a href="#" class="btn card-btn">View Project</a>
+                                <a href="https://github.com/sandeepsawant/portfolio" class="btn card-btn" target="_blank">View Source</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 10 -->
+                <div class="portfolio-item" data-aos="fade-up" data-aos-delay="900">
+                    <div class="portfolio-card">
+                        <img src="assests/images/sam-project-logo.png" alt="Chat Application">
+                        <div class="card-overlay">
+                            <h3>Real-Time Chat App</h3>
+                            <p>Socket.io, Node.js, React</p>
+                            <div class="card-buttons">
+                                <a href="#" class="btn card-btn">View Project</a>
+                                <a href="https://github.com/sandeepsawant/chat-app" class="btn card-btn" target="_blank">View Source</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 11 -->
+                <div class="portfolio-item" data-aos="fade-up" data-aos-delay="1000">
+                    <div class="portfolio-card">
+                        <img src="assests/images/sam-project-logo.png" alt="Music Player">
+                        <div class="card-overlay">
+                            <h3>Music Player</h3>
+                            <p>JavaScript, HTML5 Audio API, CSS</p>
+                            <div class="card-buttons">
+                                <a href="#" class="btn card-btn">View Project</a>
+                                <a href="https://github.com/sandeepsawant/music-player" class="btn card-btn" target="_blank">View Source</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 12 -->
+                <div class="portfolio-item" data-aos="fade-up" data-aos-delay="1100">
+                    <div class="portfolio-card">
+                        <img src="./assests/projects/sam-project-logo.png" alt="Quiz App">
+                        <div class="card-overlay">
+                            <h3>Interactive Quiz App</h3>
+                            <p>JavaScript, JSON, CSS Animations</p>
+                            <div class="card-buttons">
+                                <a href="#" class="btn card-btn">View Project</a>
+                                <a href="https://github.com/sandeepsawant/quiz-app" class="btn card-btn" target="_blank">View Source</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content" data-aos="fade-up">
+                <h2>Get In Touch</h2>
+                <p>Ready to start your next project? Drop me a line!</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/_sandeep_sawant/" class="social-link">Instagram</a>
+                    <a href="https://www.youtube.com/@_sandeep_sawant" class="social-link">Youtube</a>
+                    <a href="https://www.facebook.com/profile.php?id=100046152923110" class="social-link">Facebook</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script/initialize-defaults.js"></script>
+    <script src="script/portfolio-loader.js"></script>
+    <script src="script/image-loader.js"></script>
+    <script>
+        // Initialize AOS animations
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mainNav = document.getElementById('mainNav');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenuToggle.classList.toggle('active');
+            mainNav.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuToggle.classList.remove('active');
+                mainNav.classList.remove('active');
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mainNav.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+                mobileMenuToggle.classList.remove('active');
+                mainNav.classList.remove('active');
+            }
+        });
+
+        // Active nav link handler
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (scrollY >= (sectionTop - sectionHeight / 3)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').slice(1) === current) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 70;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

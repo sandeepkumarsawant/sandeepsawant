@@ -1,0 +1,24 @@
+{
+  "admins": [
+    {
+      "id": 1772533773615,
+      "fullName": "Sandeep Kumar",
+      "email": "sandeep@gmail.com",
+      "password": "sandeep",
+      "createdDate": "2026-03-03T10:29:33.615Z",
+      "updatedDate": "2026-03-03T10:29:33.615Z",
+      "role": "admin",
+      "isActive": true
+    },
+    {
+      "id": 1772534588357,
+      "fullName": "max",
+      "email": "sandeep@admin.com",
+      "password": "sandeep",
+      "createdDate": "2026-03-03T10:43:08.357Z",
+      "updatedDate": "2026-03-03T10:43:08.357Z",
+      "role": "admin",
+      "isActive": true
+    }
+  ]
+}
