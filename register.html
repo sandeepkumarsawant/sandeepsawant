@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration - SamCoder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- User Registration Form -->
+        <div class="auth-card" id="userRegisterCard">
+            <div class="card-header">
+                <h2>Create Your Account</h2>
+                <p>Join SamCoder community today</p>
+            </div>
+            <form id="userRegisterForm" class="auth-form">
+                <div class="form-group">
+                    <label for="userName">Full Name</label>
+                    <input type="text" id="userName" required placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label for="userEmail">Email Address</label>
+                    <input type="email" id="userEmail" required placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="userPhone">Phone Number (Optional)</label>
+                    <input type="tel" id="userPhone" placeholder="Enter your phone number">
+                </div>
+                <div class="form-group">
+                    <label for="userPassword">Password</label>
+                    <input type="password" id="userPassword" required placeholder="Create a strong password" minlength="6">
+                </div>
+                <div class="form-group">
+                    <label for="userConfirmPassword">Confirm Password</label>
+                    <input type="password" id="userConfirmPassword" required placeholder="Confirm your password">
+                </div>
+                <div class="form-group">
+                    <label for="userInterest">Area of Interest</label>
+                    <select id="userInterest" required>
+                        <option value="">Select your interest</option>
+                        <option value="web-development">Web Development</option>
+                        <option value="mobile-development">Mobile Development</option>
+                        <option value="programming">Programming (C/C++)</option>
+                        <option value="ui-ux">UI/UX Design</option>
+                        <option value="data-science">Data Science</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="agreeTerms" required>
+                        <span>I agree to the Terms & Conditions and Privacy Policy</span>
+                    </label>
+                </div>
+                <button type="submit" class="btn-submit">Create Account</button>
+                <p class="switch-text">Already have an account? <a href="user-login.html">Login here</a></p>
+                <p class="switch-text"><a href="index.html">← Back to Home</a></p>
+            </form>
+        </div>
+
+        <!-- Success Message -->
+        <div class="auth-card hidden" id="successCard">
+            <div class="card-header">
+                <div class="success-icon">✓</div>
+                <h2>Registration Successful!</h2>
+                <p>Welcome to SamCoder community</p>
+            </div>
+            <div class="success-content">
+                <p>Your account has been created successfully.</p>
+                <p>You can now login and explore our projects.</p>
+                <div class="success-actions">
+                    <a href="user-login.html" class="btn-submit">Go to Login</a>
+                    <a href="index.html" class="btn-outline">Back to Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="notification" class="notification hidden"></div>
+
+    <script src="script/user-register.js"></script>
+</body>
+</html>

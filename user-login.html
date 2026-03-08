@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login - SamCoder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- User Login Form -->
+        <div class="auth-card" id="userLoginCard">
+            <div class="card-header">
+                <h2>Welcome Back!</h2>
+                <p>Login to your account</p>
+            </div>
+            <form id="userLoginForm" class="auth-form">
+                <div class="form-group">
+                    <label for="loginEmail">Email Address</label>
+                    <input type="email" id="loginEmail" required placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" required placeholder="Enter your password">
+                </div>
+                <div class="form-group checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="rememberMe">
+                        <span>Remember me</span>
+                    </label>
+                </div>
+                <button type="submit" class="btn-submit">Login</button>
+                <p class="switch-text">Don't have an account? <a href="register.html">Register here</a></p>
+                <p class="switch-text"><a href="index.html">← Back to Home</a></p>
+            </form>
+        </div>
+
+        <!-- User Dashboard -->
+        <div class="dashboard hidden" id="userDashboard">
+            <div class="dashboard-header">
+                <h1>User Dashboard</h1>
+                <button id="logoutBtn" class="btn-logout">Logout</button>
+            </div>
+            
+            <div class="dashboard-content">
+                <div class="welcome-section">
+                    <h2>Welcome back, <span id="userName"></span>!</h2>
+                    <p>Explore projects and connect with the community</p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Projects Viewed</h3>
+                        <p class="stat-number" id="projectsViewed">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Favorites</h3>
+                        <p class="stat-number" id="favoritesCount">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Comments</h3>
+                        <p class="stat-number" id="commentsCount">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Member Since</h3>
+                        <p class="stat-number" id="memberSince" style="font-size: 1.2rem;">-</p>
+                    </div>
+                </div>
+
+                <div class="management-section">
+                    <h3>Quick Actions</h3>
+                    <div class="action-buttons">
+                        <button class="action-btn" onclick="window.location.href='index.html#portfolio'">Browse Projects</button>
+                        <button class="action-btn" onclick="window.location.href='index.html#contact'">Contact Admin</button>
+                        <button class="action-btn" id="viewProfile">View Profile</button>
+                        <button class="action-btn" id="editProfile">Edit Profile</button>
+                    </div>
+                </div>
+
+                <div class="users-section">
+                    <h3>Your Profile</h3>
+                    <div id="userProfile" class="user-profile"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="notification" class="notification hidden"></div>
+
+    <script src="script/user-login.js"></script>
+</body>
+</html>

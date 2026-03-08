@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - SamCoder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <!-- Admin Header -->
+    <header class="admin-header">
+        <div class="header-container">
+            <nav class="nav-wrap">
+                <a href="index.html" class="logo">Sandeep<span>Sawant</span></a>
+                <button class="mobile-menu-toggle" id="adminMobileMenuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav class="main-nav" id="adminMainNav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="admin.html" class="nav-link active">Admin Panel</a>
+                    <a href="user-login.html" class="nav-link">User Login</a>
+                </nav>
+            </nav>
+        </div>
+    </header>
+
+    <div class="admin-container">
+        <!-- Login Form -->
+        <div class="auth-card" id="loginCard">
+            <div class="card-header">
+                <h2>Admin Login</h2>
+                <p>Sign in to access the admin panel</p>
+            </div>
+            <form id="loginForm" class="auth-form">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" required placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" required placeholder="Enter your password">
+                </div>
+                <button type="submit" class="btn-submit">Login</button>
+                <p class="switch-text">Don't have an account? <a href="#" id="showRegister">Register here</a></p>
+            </form>
+        </div>
+
+        <!-- Registration Form -->
+        <div class="auth-card hidden" id="registerCard">
+            <div class="card-header">
+                <h2>Admin Registration</h2>
+                <p>Create a new admin account</p>
+            </div>
+            <form id="registerForm" class="auth-form">
+                <div class="form-group">
+                    <label for="registerName">Full Name</label>
+                    <input type="text" id="registerName" required placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">Email</label>
+                    <input type="email" id="registerEmail" required placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Password</label>
+                    <input type="password" id="registerPassword" required placeholder="Create a password" minlength="6">
+                </div>
+                <div class="form-group">
+                    <label for="registerConfirmPassword">Confirm Password</label>
+                    <input type="password" id="registerConfirmPassword" required placeholder="Confirm your password">
+                </div>
+                <button type="submit" class="btn-submit">Register</button>
+                <p class="switch-text">Already have an account? <a href="#" id="showLogin">Login here</a></p>
+            </form>
+        </div>
+
+        <!-- Dashboard (shown after login) -->
+        <div class="dashboard hidden" id="dashboard">
+            <div class="dashboard-header">
+                <h1>Admin Dashboard</h1>
+                <button id="logoutBtn" class="btn-logout">Logout</button>
+            </div>
+            
+            <div class="dashboard-content">
+                <div class="welcome-section">
+                    <h2>Welcome, <span id="userName"></span>!</h2>
+                    <p>Manage your portfolio website from here</p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Total Projects</h3>
+                        <p class="stat-number">12</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Page Views</h3>
+                        <p class="stat-number">1,234</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Messages</h3>
+                        <p class="stat-number">45</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Active Users</h3>
+                        <p class="stat-number">3</p>
+                    </div>
+                </div>
+
+                <div class="management-section">
+                    <h3>Quick Actions</h3>
+                    <div class="action-buttons">
+                        <button class="action-btn" id="showProjectUpload">Add New Project</button>
+                        <button class="action-btn" id="viewProjects">View All Projects</button>
+                        <button class="action-btn" id="showImageManager">Manage Images</button>
+                        <button class="action-btn" id="showRegisterUser">Register New User</button>
+                        <button class="action-btn" id="showRegisteredUsers">View Registered Users</button>
+                        <button class="action-btn">View Messages</button>
+                    </div>
+                </div>
+
+                <!-- Image Management Section -->
+                <div class="image-management-section hidden" id="imageManagementSection">
+                    <div class="section-header">
+                        <h3>Image Management</h3>
+                        <button class="btn-close" id="closeImageManager">✕</button>
+                    </div>
+                    
+                    <div class="image-categories">
+                        <!-- Profile Picture -->
+                        <div class="image-category">
+                            <h4>Profile Picture (Hero Section)</h4>
+                            <div class="current-image-preview">
+                                <img id="currentProfilePic" src="assests/images/profile/mypic.jpg" alt="Current Profile">
+                            </div>
+                            <div class="image-upload-form">
+                                <input type="file" id="profilePicUpload" accept="image/*">
+                                <button class="btn-upload" onclick="adminPanel.uploadImage('profile')">Update Profile Picture</button>
+                            </div>
+                        </div>
+
+                        <!-- Journey Pictures -->
+                        <div class="image-category">
+                            <h4>Journey Pictures (Gallery Section)</h4>
+                            <p style="color: var(--secondary); margin-bottom: 1rem; font-size: 0.9rem;">
+                                Manage your journey images that appear in the gallery section
+                            </p>
+                            
+                            <div id="journeyImagesContainer" class="journey-images-container">
+                                <!-- Journey images will be loaded here dynamically -->
+                            </div>
+
+                            <div class="add-journey-section">
+                                <h5>Add New Journey Picture</h5>
+                                <input type="text" id="newJourneyTitle" placeholder="Title (e.g., At Work, Creative Process)">
+                                <textarea id="newJourneyDescription" placeholder="Description" rows="2"></textarea>
+                                <input type="file" id="newJourneyUpload" accept="image/*">
+                                <div id="newJourneyPreview" class="image-preview-small hidden">
+                                    <img id="newJourneyPreviewImg" src="" alt="Preview">
+                                </div>
+                                <button class="btn-upload" onclick="adminPanel.addNewJourney()">Add Journey Picture</button>
+                            </div>
+                        </div>
+
+                        <!-- Achievement Images -->
+                        <div class="image-category">
+                            <h4>Achievement Images</h4>
+                            <p style="color: var(--secondary); margin-bottom: 1rem; font-size: 0.9rem;">
+                                Manage your achievement images that appear in the achievements section
+                            </p>
+                            
+                            <div id="achievementImagesContainer" class="achievement-images-container">
+                                <!-- Achievement images will be loaded here dynamically -->
+                            </div>
+
+                            <div class="add-achievement">
+                                <h5>Add New Achievement</h5>
+                                <input type="text" id="newAchievementTitle" placeholder="Achievement Title">
+                                <textarea id="newAchievementDescription" placeholder="Description" rows="2"></textarea>
+                                <input type="file" id="newAchievementUpload" accept="image/*">
+                                <div id="newAchievementPreview" class="image-preview-small hidden">
+                                    <img id="newAchievementPreviewImg" src="" alt="Preview">
+                                </div>
+                                <button class="btn-upload" onclick="adminPanel.addNewAchievement()">Add Achievement</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Upload Section -->
+                <div class="project-upload-section hidden" id="projectUploadSection">
+                    <div class="section-header">
+                        <h3>Upload New Project</h3>
+                        <button class="btn-close" id="closeProjectUpload">✕</button>
+                    </div>
+                    <div class="upload-info">
+                        <p style="color: var(--secondary); margin-bottom: 1.5rem; padding: 1rem; background: rgba(0, 255, 136, 0.1); border-radius: 8px; border-left: 3px solid var(--primary);">
+                            📌 Projects uploaded here will automatically appear in the <strong>Portfolio section</strong> on your main website (index.html)
+                        </p>
+                    </div>
+                    <form id="projectUploadForm" class="upload-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="projectTitle">Project Title</label>
+                                <input type="text" id="projectTitle" required placeholder="e.g., E-Commerce Website">
+                            </div>
+                            <div class="form-group">
+                                <label for="projectCategory">Category</label>
+                                <select id="projectCategory" required>
+                                    <option value="">Select Category</option>
+                                    <option value="web">Web Development</option>
+                                    <option value="mobile">Mobile App</option>
+                                    <option value="desktop">Desktop Application</option>
+                                    <option value="design">UI/UX Design</option>
+                                    <option value="programming">C Programming</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="projectDescription">Description</label>
+                            <textarea id="projectDescription" required placeholder="Brief description of your project" rows="3"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="projectTechnologies">Technologies Used</label>
+                            <input type="text" id="projectTechnologies" required placeholder="e.g., HTML, CSS, JavaScript, React">
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="projectLiveUrl">Live URL (Optional)</label>
+                                <input type="url" id="projectLiveUrl" placeholder="https://example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="projectGithubUrl">GitHub URL (Optional)</label>
+                                <input type="url" id="projectGithubUrl" placeholder="https://github.com/username/repo">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="projectImage">Project Image</label>
+                            <input type="file" id="projectImage" accept="image/*" required>
+                            <div id="imagePreview" class="image-preview hidden">
+                                <img id="previewImg" src="" alt="Preview">
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn-submit">Upload Project</button>
+                            <button type="button" class="btn-cancel" id="cancelUpload">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Projects List Section -->
+                <div class="projects-list-section hidden" id="projectsListSection">
+                    <div class="section-header">
+                        <h3>All Projects</h3>
+                        <button class="btn-close" id="closeProjectsList">✕</button>
+                    </div>
+                    <div id="projectsList" class="projects-grid"></div>
+                </div>
+
+                <!-- Register New User Section -->
+                <div class="register-user-section hidden" id="registerUserSection">
+                    <div class="section-header">
+                        <h3>Register New User</h3>
+                        <button class="btn-close" id="closeRegisterUser">✕</button>
+                    </div>
+                    <form id="quickRegisterForm" class="upload-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="quickRegisterName">Full Name</label>
+                                <input type="text" id="quickRegisterName" required placeholder="Enter full name">
+                            </div>
+                            <div class="form-group">
+                                <label for="quickRegisterEmail">Email</label>
+                                <input type="email" id="quickRegisterEmail" required placeholder="Enter email address">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="quickRegisterPassword">Password</label>
+                                <input type="text" id="quickRegisterPassword" required placeholder="Create password" minlength="6">
+                            </div>
+                            <div class="form-group">
+                                <label for="quickRegisterConfirmPassword">Confirm Password</label>
+                                <input type="text" id="quickRegisterConfirmPassword" required placeholder="Confirm password">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="quickRegisterRole">User Role</label>
+                            <select id="quickRegisterRole" required>
+                                <option value="admin">Admin</option>
+                                <option value="user">User</option>
+                                <option value="moderator">Moderator</option>
+                            </select>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn-submit">Register User</button>
+                            <button type="button" class="btn-cancel" id="cancelQuickRegister">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Registered Users List Section -->
+                <div class="registered-users-section hidden" id="registeredUsersSection">
+                    <div class="section-header">
+                        <h3>All Registered Users</h3>
+                        <button class="btn-close" id="closeRegisteredUsers">✕</button>
+                    </div>
+                    <div id="registeredUsersList" class="users-list"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="notification" class="notification hidden"></div>
+
+    <script src="script/initialize-defaults.js"></script>
+    <script src="script/admin-api.js"></script>
+    <script src="script/admin.js"></script>
+    <script>
+        // Mobile Menu Toggle for Admin Panel
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuToggle = document.getElementById('adminMobileMenuToggle');
+            const mainNav = document.getElementById('adminMainNav');
+
+            if (mobileMenuToggle && mainNav) {
+                mobileMenuToggle.addEventListener('click', () => {
+                    mobileMenuToggle.classList.toggle('active');
+                    mainNav.classList.toggle('active');
+                });
+
+                // Close mobile menu when clicking on a link
+                const navLinks = mainNav.querySelectorAll('.nav-link');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenuToggle.classList.remove('active');
+                        mainNav.classList.remove('active');
+                    });
+                });
+
+                // Close mobile menu when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (!mainNav.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+                        mobileMenuToggle.classList.remove('active');
+                        mainNav.classList.remove('active');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
