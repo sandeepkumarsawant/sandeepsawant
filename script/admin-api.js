@@ -1,5 +1,5 @@
 // API Client for Admin Panel
-const API_BASE_URL = 'http://localhost:3001/api';
+const API_BASE_URL = 'https://portfolio-website-intially.onrender.com/api';
 
 class AdminAPI {
     // Get all users
